@@ -656,6 +656,223 @@
         }
 
         /* =========================
+           PRICING SECTION STYLES
+           ========================= */
+        .pricing-section {
+            background: var(--gray-50);
+            padding: var(--space-4xl) var(--space-md);
+        }
+
+        .pricing-strategy {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .strategy-header {
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+        }
+
+        .strategy-header h3 {
+            color: var(--olympic-blue);
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .pricing-phases {
+            margin-bottom: var(--space-3xl);
+        }
+
+        .pricing-phase {
+            margin-bottom: var(--space-4xl);
+        }
+
+        .phase-header {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .phase-header h4 {
+            color: var(--olympic-blue);
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-sm);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .service-card {
+            background: white;
+            border-radius: var(--radius-2xl);
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-md);
+            border: 2px solid transparent;
+            transition: all var(--transition-base);
+        }
+
+        .service-card.featured {
+            border-color: var(--success-green);
+            transform: scale(1.02);
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .service-header {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+            position: relative;
+        }
+
+        .service-header h5 {
+            color: var(--olympic-blue);
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-sm);
+        }
+
+        .service-price {
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            color: var(--success-green);
+            margin-bottom: var(--space-sm);
+        }
+
+        .service-badge, .plan-badge {
+            background: var(--success-green);
+            color: white;
+            font-size: var(--text-sm);
+            font-weight: 600;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: 20px;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+        }
+
+        .service-description, .plan-description {
+            color: var(--gray-600);
+            margin-bottom: var(--space-lg);
+            text-align: center;
+        }
+
+        .service-features, .plan-features {
+            list-style: none;
+            margin-bottom: var(--space-xl);
+        }
+
+        .service-features li, .plan-features li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid var(--gray-100);
+            position: relative;
+            padding-left: var(--space-lg);
+        }
+
+        .service-features li::before, .plan-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-green);
+            font-weight: 700;
+        }
+
+        .monthly-plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-xl);
+        }
+
+        .plan-card {
+            background: white;
+            border-radius: var(--radius-2xl);
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-md);
+            border: 2px solid transparent;
+            transition: all var(--transition-base);
+            position: relative;
+        }
+
+        .plan-card.featured {
+            border-color: var(--success-green);
+            transform: scale(1.05);
+        }
+
+        .plan-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .plan-header {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+        }
+
+        .plan-header h5 {
+            color: var(--olympic-blue);
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-sm);
+        }
+
+        .plan-price {
+            font-size: var(--text-4xl);
+            font-weight: 700;
+            color: var(--success-green);
+            margin-bottom: var(--space-sm);
+        }
+
+        .price-period {
+            font-size: var(--text-base);
+            color: var(--gray-500);
+            font-weight: 400;
+        }
+
+        .pricing-guarantee {
+            background: linear-gradient(135deg, var(--success-green-light), var(--success-green));
+            border-radius: var(--radius-2xl);
+            padding: var(--space-2xl);
+            margin: var(--space-3xl) 0;
+            text-align: center;
+        }
+
+        .guarantee-content h4 {
+            color: white;
+            margin-bottom: var(--space-md);
+        }
+
+        .guarantee-content p {
+            color: white;
+            opacity: 0.9;
+        }
+
+        .pricing-cta {
+            text-align: center;
+            padding: var(--space-2xl);
+            background: white;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-md);
+        }
+
+        .pricing-cta h4 {
+            color: var(--olympic-blue);
+            margin-bottom: var(--space-md);
+        }
+
+        .pricing-cta p {
+            color: var(--gray-600);
+            margin-bottom: var(--space-lg);
+        }
+
+        .btn-lg {
+            padding: var(--space-lg) var(--space-2xl);
+            font-size: var(--text-lg);
+        }
+
+        /* =========================
            CONTACT SECTION STYLES
            ========================= */
         .contact-section {
@@ -1146,6 +1363,7 @@
                 <ul class="nav-menu">
                     <li><a href="#home" class="nav-link active">Home</a></li>
                     <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#pricing" class="nav-link">Pricing</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
@@ -1280,7 +1498,186 @@
 
                 <div class="text-center mt-4">
                     <p style="color: var(--gray-500); margin-bottom: var(--space-md);">Want to see all our services and pricing options?</p>
-                    <a href="#contact" class="btn btn-primary" data-track-event="view_all_services">Get Custom Quote & Pricing</a>
+                    <a href="#pricing" class="btn btn-primary" data-track-event="view_all_services">View All Services & Pricing</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTEGRATION TEST: Pricing Section Component -->
+        <section id="pricing" class="pricing-section" role="main" aria-labelledby="pricing-heading">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 id="pricing-heading">Clear, Honest Pricing</h2>
+                    <p>Choose from our proven Phase 1 services to demonstrate value, then grow with our comprehensive monthly plans.</p>
+                </div>
+                
+                <div class="pricing-strategy">
+                    <div class="strategy-header">
+                        <h3>Our Two-Phase Approach</h3>
+                        <p>We believe in proving value before asking for long-term commitments.</p>
+                    </div>
+                    
+                    <div class="pricing-phases">
+                        <!-- Phase 1: One-Time Services -->
+                        <div class="pricing-phase">
+                            <div class="phase-header">
+                                <h4>Phase 1: Prove Our Value</h4>
+                                <p>One-time services to demonstrate results</p>
+                            </div>
+                            
+                            <div class="services-grid">
+                                <div class="service-card featured">
+                                    <div class="service-header">
+                                        <h5>Website SEO Audit + Fixes</h5>
+                                        <div class="service-price">$275</div>
+                                        <div class="service-badge">Most Popular</div>
+                                    </div>
+                                    <p class="service-description">Comprehensive website analysis with immediate fixes to improve search rankings and user experience.</p>
+                                    <ul class="service-features">
+                                        <li>Complete SEO audit report</li>
+                                        <li>Technical issue fixes</li>
+                                        <li>Content optimization</li>
+                                        <li>Performance improvements</li>
+                                    </ul>
+                                    <a href="#contact" class="btn btn-success">Get Started</a>
+                                </div>
+                                
+                                <div class="service-card">
+                                    <div class="service-header">
+                                        <h5>GMB Setup & Optimization</h5>
+                                        <div class="service-price">$175</div>
+                                    </div>
+                                    <p class="service-description">Complete Google My Business setup and optimization to dominate local search results.</p>
+                                    <ul class="service-features">
+                                        <li>Complete GMB profile setup</li>
+                                        <li>Photo optimization</li>
+                                        <li>Review management system</li>
+                                        <li>Local keyword optimization</li>
+                                    </ul>
+                                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                                </div>
+                                
+                                <div class="service-card">
+                                    <div class="service-header">
+                                        <h5>Local Citation Building</h5>
+                                        <div class="service-price">$175</div>
+                                    </div>
+                                    <p class="service-description">Build consistent business listings across 50+ local directories and review sites.</p>
+                                    <ul class="service-features">
+                                        <li>50+ directory submissions</li>
+                                        <li>NAP consistency audit</li>
+                                        <li>Citation cleanup</li>
+                                        <li>Progress reporting</li>
+                                    </ul>
+                                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                                </div>
+                                
+                                <div class="service-card">
+                                    <div class="service-header">
+                                        <h5>Review Generation Setup</h5>
+                                        <div class="service-price">$135</div>
+                                    </div>
+                                    <p class="service-description">Automated system to generate more positive reviews from happy customers.</p>
+                                    <ul class="service-features">
+                                        <li>Review request automation</li>
+                                        <li>Email templates</li>
+                                        <li>Follow-up sequences</li>
+                                        <li>Review monitoring</li>
+                                    </ul>
+                                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                                </div>
+                                
+                                <div class="service-card">
+                                    <div class="service-header">
+                                        <h5>Content Package</h5>
+                                        <div class="service-price">$225</div>
+                                    </div>
+                                    <p class="service-description">3 SEO-optimized blog posts or web pages to boost your search rankings.</p>
+                                    <ul class="service-features">
+                                        <li>3 custom blog posts</li>
+                                        <li>Keyword optimization</li>
+                                        <li>Local focus</li>
+                                        <li>Call-to-action included</li>
+                                    </ul>
+                                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Phase 2: Monthly Plans -->
+                        <div class="pricing-phase">
+                            <div class="phase-header">
+                                <h4>Phase 2: Ongoing Growth</h4>
+                                <p>Monthly plans for sustained SEO success</p>
+                            </div>
+                            
+                            <div class="monthly-plans">
+                                <div class="plan-card">
+                                    <div class="plan-header">
+                                        <h5>Basic Local Plan</h5>
+                                        <div class="plan-price">$400<span class="price-period">/month</span></div>
+                                    </div>
+                                    <p class="plan-description">Essential ongoing SEO for established local presence.</p>
+                                    <ul class="plan-features">
+                                        <li>Monthly keyword tracking</li>
+                                        <li>GMB management</li>
+                                        <li>1 blog post per month</li>
+                                        <li>Monthly reporting</li>
+                                        <li>Email support</li>
+                                    </ul>
+                                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                                </div>
+                                
+                                <div class="plan-card featured">
+                                    <div class="plan-header">
+                                        <h5>Growth Plan</h5>
+                                        <div class="plan-price">$600<span class="price-period">/month</span></div>
+                                        <div class="plan-badge">Recommended</div>
+                                    </div>
+                                    <p class="plan-description">Comprehensive SEO for growing businesses ready to dominate their market.</p>
+                                    <ul class="plan-features">
+                                        <li>Everything in Basic Plan</li>
+                                        <li>2 blog posts per month</li>
+                                        <li>Social media management</li>
+                                        <li>Technical SEO monitoring</li>
+                                        <li>Priority phone support</li>
+                                        <li>Quarterly strategy calls</li>
+                                    </ul>
+                                    <a href="#contact" class="btn btn-success">Get Started</a>
+                                </div>
+                                
+                                <div class="plan-card">
+                                    <div class="plan-header">
+                                        <h5>Premium Plan</h5>
+                                        <div class="plan-price">$900<span class="price-period">/month</span></div>
+                                    </div>
+                                    <p class="plan-description">Full-service SEO for businesses serious about market domination.</p>
+                                    <ul class="plan-features">
+                                        <li>Everything in Growth Plan</li>
+                                        <li>Weekly blog posts</li>
+                                        <li>PPC ad management</li>
+                                        <li>Advanced analytics</li>
+                                        <li>Monthly strategy calls</li>
+                                        <li>Custom automation setup</li>
+                                    </ul>
+                                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-guarantee">
+                        <div class="guarantee-content">
+                            <h4>🛡️ 30-Day Money-Back Guarantee</h4>
+                            <p>Not satisfied with our Phase 1 services? Get your money back within 30 days. We're confident you'll see the value we bring to your business.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-cta">
+                        <h4>Ready to Get Started?</h4>
+                        <p>Let's discuss which option is best for your business goals and budget.</p>
+                        <a href="#contact" class="btn btn-success btn-lg">Get Your Free Consultation</a>
+                    </div>
                 </div>
             </div>
         </section>
