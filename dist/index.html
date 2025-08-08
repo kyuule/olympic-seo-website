@@ -31,7 +31,7 @@
     <link rel="dns-prefetch" href="//www.google-analytics.com">
     
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏔️</text></svg>">
+    <link rel="icon" href="olympic-logo.png">
     
     <style>
         /* =========================
@@ -60,14 +60,22 @@
            CSS CUSTOM PROPERTIES
            ========================= */
         :root {
-            /* Olympic SEO Color Palette */
-            --olympic-blue: #1e3a8a;
-            --olympic-blue-dark: #1e40af;
-            --olympic-blue-light: #3b82f6;
-            --success-green: #10b981;
-            --success-green-light: #34d399;
-            --olympic-gold: #f59e0b;
-            --olympic-gold-light: #fbbf24;
+            /* Olympic Tech Color Palette (from logo) */
+            --primary-green: #5CB88F;
+            --primary-green-light: #7DC8A5;
+            --primary-blue: #4A90A4;
+            --primary-blue-light: #7DB8CA;
+            --neutral-gray: #7A7A7A;
+            --white: #FFFFFF;
+            
+            /* Derived colors for website use */
+            --olympic-blue: #4A90A4;
+            --olympic-blue-dark: #3A7A8A;
+            --olympic-blue-light: #7DB8CA;
+            --success-green: #5CB88F;
+            --success-green-light: #7DC8A5;
+            --olympic-gray: #7A7A7A;
+            --olympic-gray-light: #9A9A9A;
             
             /* Neutrals */
             --gray-50: #f9fafb;
@@ -169,14 +177,25 @@
             display: flex;
             align-items: center;
             margin-bottom: 2px;
-            transition: color var(--transition-base);
+            transition: all var(--transition-base);
             line-height: 1.2;
         }
 
-        .logo::before {
-            content: "🏔️";
-            margin-right: var(--space-sm);
-            font-size: 1.6rem;
+        .logo-image {
+            height: 45px;
+            width: auto;
+            margin-right: var(--space-md);
+            transition: transform var(--transition-base);
+        }
+
+        .logo:hover .logo-image {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            color: var(--olympic-blue);
+            font-size: var(--text-2xl);
+            font-weight: 700;
         }
 
         .logo:hover {
@@ -945,6 +964,18 @@
             box-shadow: var(--shadow-lg);
         }
 
+        .btn-success {
+            background: var(--success-green);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-success:hover {
+            background: var(--success-green-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
         .text-center { text-align: center; }
         .mb-4 { margin-bottom: var(--space-xl); }
         .mt-4 { margin-top: var(--space-xl); }
@@ -1103,7 +1134,8 @@
             <!-- Logo Section -->
             <div class="logo-section">
                 <a href="#home" class="logo" aria-label="Olympic SEO - Return to top">
-                    Olympic SEO
+                    <img src="olympic-logo.png" alt="Olympic SEO Logo" class="logo-image">
+                    <span class="logo-text">Olympic SEO</span>
                 </a>
                 <div class="tagline">Port Townsend SEO & Automation</div>
             </div>
