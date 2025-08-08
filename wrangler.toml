@@ -1,0 +1,4 @@
+name = "olympic-seo"
+main = "src/index.js"
+compatibility_date = "2023-12-07"
+assets = { directory = "./dist" }
