@@ -87,6 +87,17 @@
                 </div>
             </button>
         </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+            <ul class="mobile-nav-menu">
+                <li><a href="./index.html" class="mobile-nav-link">Home</a></li>
+                <li><a href="./services.html" class="mobile-nav-link">Services</a></li>
+                <li><a href="./about.html" class="mobile-nav-link">About</a></li>
+                <li><a href="./audit.html" class="mobile-nav-link active">Free Audit</a></li>
+                <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Hero Section -->
@@ -430,9 +441,14 @@
     <script>
         // Mobile menu toggle
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+        
         if (mobileMenuToggle) {
             mobileMenuToggle.addEventListener('click', () => {
-                console.log('Mobile menu clicked');
+                const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+                mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+                mobileNav.classList.toggle('active');
+                document.body.classList.toggle('mobile-menu-open');
             });
         }
 

@@ -121,12 +121,78 @@
             --text-2xl: 1.5rem;
             --radius-lg: 0.5rem;
         }
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--space-sm);
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--gray-700);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        .mobile-nav {
+            display: none;
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+            padding: var(--space-md) 0;
+        }
+        
+        .mobile-nav.active {
+            display: block;
+        }
+        
+        .mobile-nav-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+            padding: 0 var(--space-md);
+        }
+        
+        .mobile-nav-link {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-weight: 500;
+            padding: var(--space-md);
+            border-radius: var(--radius-lg);
+            transition: all 0.2s ease;
+            display: block;
+        }
+        
+        .mobile-nav-link.active, 
+        .mobile-nav-link:hover {
+            background: var(--primary-teal);
+            color: var(--white);
+        }
+        
         @media (max-width: 768px) {
-            .nav-menu, .contact-info {
+            .nav-menu {
                 display: none;
             }
-            .mobile-menu-btn {
-                display: block;
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .contact-info {
+                display: none;
             }
         }
     </style>
@@ -174,12 +240,25 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </button>
         </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+            <ul class="mobile-nav-menu">
+                <li><a href="./index.html" class="mobile-nav-link active">Home</a></li>
+                <li><a href="./services.html" class="mobile-nav-link">Services</a></li>
+                <li><a href="./about.html" class="mobile-nav-link">About</a></li>
+                <li><a href="./audit.html" class="mobile-nav-link">Free Audit</a></li>
+                <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Main Content -->
@@ -465,11 +544,15 @@
     <!-- JavaScript -->
     <script>
         // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
-                // Add mobile menu functionality here
-                console.log('Mobile menu clicked');
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+        
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+                mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+                mobileNav.classList.toggle('active');
+                document.body.classList.toggle('mobile-menu-open');
             });
         }
 

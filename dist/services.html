@@ -109,12 +109,77 @@
         }
         .mobile-menu-toggle {
             display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--space-sm);
+            flex-direction: column;
+            gap: 4px;
         }
+        
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--gray-700);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+        
         .mobile-nav {
             display: none;
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+            padding: var(--space-md) 0;
         }
+        
+        .mobile-nav.active {
+            display: block;
+        }
+        
         .mobile-nav-menu {
-            display: none;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+            padding: 0 var(--space-md);
+        }
+        
+        .mobile-nav-link {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-weight: 500;
+            padding: var(--space-md);
+            border-radius: var(--radius-lg);
+            transition: all 0.2s ease;
+            display: block;
+        }
+        
+        .mobile-nav-link.active, 
+        .mobile-nav-link:hover {
+            background: var(--primary-teal);
+            color: var(--white);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .contact-info {
+                display: none;
+            }
         }
         :root {
             --primary-teal: #4ECDC4;
