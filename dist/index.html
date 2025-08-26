@@ -29,6 +29,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="./olympic-logo.png" as="image" type="image/png">
+    <link rel="preload" href="./images/port-townsend-lighthouse-background.webp" as="image" type="image/webp">
+    <link rel="preload" href="./images/port-townsend-lighthouse-background.jpg" as="image" type="image/jpeg">
     <link rel="dns-prefetch" href="//www.google-analytics.com">
     
     <!-- Enhanced Typography -->
@@ -194,6 +196,57 @@
             .contact-info {
                 display: none;
             }
+            
+            /* Hero section mobile optimization */
+            .hero-section {
+                background-attachment: scroll !important;
+            }
+        }
+
+        /* Port Townsend Hero Background Responsive Styles */
+        @media (max-width: 768px) {
+            .hero-section {
+                background-attachment: scroll !important;
+                background-image: linear-gradient(rgba(78, 205, 196, 0.15), rgba(0, 0, 0, 0.35)), 
+                                 url('./images/port-townsend-lighthouse-background.webp') !important;
+                background-position: center top !important;
+                min-height: 70vh !important;
+                padding: var(--space-4xl) var(--space-md) !important;
+            }
+            
+            .hero-content {
+                padding: var(--space-xl) !important;
+            }
+            
+            .hero-section h1 {
+                font-size: var(--text-3xl) !important;
+            }
+            
+            .hero-section p {
+                font-size: var(--text-lg) !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                background-image: linear-gradient(rgba(78, 205, 196, 0.2), rgba(0, 0, 0, 0.4)), 
+                                 url('./images/port-townsend-lighthouse-background.webp') !important;
+                background-position: center top !important;
+                min-height: 60vh !important;
+            }
+            
+            .hero-section h1 {
+                font-size: var(--text-2xl) !important;
+            }
+        }
+
+        /* Modern browser WebP support */
+        @supports (background-image: url('image.webp')) {
+            .hero-section {
+                background-image: linear-gradient(rgba(78, 205, 196, 0.1), rgba(0, 0, 0, 0.25)), 
+                                 url('./images/port-townsend-lighthouse-background.webp') !important;
+                background-position: center top !important;
+            }
         }
     </style>
 </head>
@@ -217,7 +270,6 @@
                     <li><a href="./index.html" class="nav-link active">Home</a></li>
                     <li><a href="./services.html" class="nav-link">Services</a></li>
                     <li><a href="./about.html" class="nav-link">About</a></li>
-                    <li><a href="./audit.html" class="nav-link">Free Audit</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
@@ -230,7 +282,7 @@
                     </svg>
                     (360) 555-0123
                 </a>
-                <a href="./audit.html" class="cta-button" data-track-event="cta_click_header">
+                <a href="#contact" class="cta-button" data-track-event="cta_click_header">
                     Get Free SEO Audit
                     <svg class="icon icon-sm" style="margin-left: 8px;" viewBox="0 0 24 24">
                         <path d="M21 12a9 9 0 0 0 -9 -9a9 9 0 0 0 -9 9a9 9 0 0 0 9 9a9 9 0 0 0 9 -9"></path>
@@ -255,7 +307,6 @@
                 <li><a href="./index.html" class="mobile-nav-link active">Home</a></li>
                 <li><a href="./services.html" class="mobile-nav-link">Services</a></li>
                 <li><a href="./about.html" class="mobile-nav-link">About</a></li>
-                <li><a href="./audit.html" class="mobile-nav-link">Free Audit</a></li>
                 <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
             </ul>
         </nav>
@@ -264,21 +315,43 @@
     <!-- Main Content -->
     <main id="main-content">
         <!-- Hero Section -->
-        <section id="home" class="hero-section" role="banner">
-            <div class="hero-content">
-                <h1>Dominate Port Townsend Local Search</h1>
-                <p>Olympic SEO helps small businesses in Port Townsend and the Olympic Peninsula get found online, attract more customers, and grow their revenue with proven local SEO strategies.</p>
+        <section id="home" class="hero-section" role="banner" style="
+            background: linear-gradient(rgba(78, 205, 196, 0.1), rgba(0, 0, 0, 0.25)), 
+                        url('./images/port-townsend-lighthouse-background.jpg');
+            background-size: cover;
+            background-position: center top;
+            background-attachment: fixed;
+            color: var(--white);
+            position: relative;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        ">
+            <div class="hero-content" style="
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: var(--space-2xl);
+                text-align: center;
+                background: rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(10px);
+                border-radius: var(--radius-2xl);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            ">
+                <h1 style="color: var(--white); margin-bottom: var(--space-lg); font-size: var(--text-5xl); font-weight: 800; text-shadow: 0 2px 8px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.9);">Get Found Online in Port Townsend</h1>
+                <p style="color: rgba(255, 255, 255, 0.98); font-size: var(--text-xl); margin-bottom: var(--space-2xl); text-shadow: 0 2px 6px rgba(0,0,0,0.7), 0 1px 2px rgba(0,0,0,0.8);">Hi, I'm Kyle England. After 38 years in tech, I moved to Port Townsend in 2024 and fell in love with this community. Now I help local Peninsula businesses get the online visibility they deserve—without the technical headaches or corporate agency runaround.</p>
                 
                 <div class="hero-cta">
-                    <a href="./audit.html" class="hero-btn" data-track-event="cta_click_hero" data-service="free-seo-audit">
-                        <span class="btn-text">Claim Your FREE $500 Audit</span>
+                    <a href="#contact" class="hero-btn" data-track-event="cta_click_hero" data-service="contact">
+                        <span class="btn-text">Get Your Free SEO Check</span>
                         <svg class="icon icon-sm icon-white" style="margin-left: 8px;" viewBox="0 0 24 24">
                             <circle cx="11" cy="11" r="8"></circle>
                             <path d="m21 21l-4.35-4.35"></path>
                         </svg>
                     </a>
                     <a href="tel:+1-360-555-0123" class="hero-btn secondary" data-track-event="phone_click_hero">
-                        <span class="btn-text">Call Port Townsend Local</span>
+                        <span class="btn-text">Call a Local</span>
                         <svg class="icon icon-sm" style="margin-left: 8px;" viewBox="0 0 24 24">
                             <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"></path>
                         </svg>
@@ -338,8 +411,8 @@
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                             </svg>
                         </div>
-                        <h3>Fresh Start, Full Commitment</h3>
-                        <p>New to Port Townsend's SEO scene, bringing modern strategies and dedicated personal service. Your success becomes our first testimonial.</p>
+                        <h3>I'm Your Neighbor</h3>
+                        <p>When I moved to Port Townsend in 2024, I discovered something special—a community where businesses actually care about their customers. I wanted to help these businesses get found online by the people who matter: locals and visitors who appreciate authentic experiences.</p>
                     </div>
                     
                     <div class="trust-item fade-in-up scale-in" data-track-event="trust_interaction" data-trust-type="local-expertise">
@@ -348,8 +421,8 @@
                                 <path d="M14 6l-4.22 5.63 1.25 1.67L14 9.33 19 16h-8.46l-4.01-5.37L1 18h22L14 6zM5 16l1.52-2.03L8.04 16H5z"/>
                             </svg>
                         </div>
-                        <h3>Olympic Peninsula Authority</h3>
-                        <p>Deep local knowledge of Port Townsend, Sequim, Forks, and Olympic Peninsula tourism. We understand seasonal business patterns, local customer behavior, and what Peninsula businesses need to succeed online.</p>
+                        <h3>I Understand Peninsula Challenges</h3>
+                        <p>Seasonal tourism, ferry-dependent customers, competition from Seattle agencies who don't "get" our area. In my first year serving local businesses, I've learned what works here—and what definitely doesn't. Most Peninsula businesses need simple, reliable systems, not complex corporate solutions.</p>
                     </div>
                     
                     <div class="trust-item fade-in-up scale-in" data-track-event="trust_interaction" data-trust-type="track-record">
@@ -358,8 +431,8 @@
                                 <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
                             </svg>
                         </div>
-                        <h3>Data-Driven Approach</h3>
-                        <p>Using cutting-edge SEO tools and analytics to deliver measurable results. Every strategy backed by real data, not guesswork.</p>
+                        <h3>ADHD-Friendly Approach</h3>
+                        <p>My ADHD means I get overwhelmed by complex systems, so I build simple ones that just work. If tech anxiety keeps you up at night (like it did me), you'll appreciate my straightforward approach. No confusing dashboards, no technical jargon, no maintenance headaches.</p>
                     </div>
                     
                     <div class="trust-item fade-in-up scale-in" data-track-event="trust_interaction" data-trust-type="response-time">
@@ -399,7 +472,7 @@
                             </svg>
                         </div>
                         <h3 style="font-size: var(--text-xl); margin-bottom: var(--space-md);">Website Development</h3>
-                        <p style="color: var(--gray-600); margin-bottom: var(--space-lg);">Modern, secure websites with zero maintenance. Built for Olympic Peninsula businesses.</p>
+                        <p style="color: var(--gray-600); margin-bottom: var(--space-lg);">No more WordPress crashes or update anxiety. I build fast, secure websites that just work. Currently partnering with Sarah Peller to develop this approach for Peninsula businesses.</p>
                         <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--primary-teal); margin-bottom: var(--space-lg);">Starting at $899</div>
                         <a href="./services.html" class="btn btn-primary">View All Services</a>
                     </div>
@@ -413,7 +486,7 @@
                             </svg>
                         </div>
                         <h3 style="font-size: var(--text-xl); margin-bottom: var(--space-md);">Monthly SEO Plans</h3>
-                        <p style="color: var(--gray-600); margin-bottom: var(--space-lg);">Comprehensive monthly plans for sustained growth and ongoing optimization.</p>
+                        <p style="color: var(--gray-600); margin-bottom: var(--space-lg);">Monthly plans for businesses who want ongoing help with local SEO. Currently working with Port Townsend Reiki on GMB optimization.</p>
                         <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--ocean-blue); margin-bottom: var(--space-lg);">$400-$900/month</div>
                         <a href="./services.html#monthly-plans" class="btn btn-secondary">View Plans</a>
                     </div>
@@ -430,7 +503,7 @@
                         <h3 style="font-size: var(--text-xl); margin-bottom: var(--space-md); color: var(--white);">FREE Security Audit</h3>
                         <p style="color: rgba(255,255,255,0.9); margin-bottom: var(--space-lg);">Comprehensive analysis to protect your business from cyber threats.</p>
                         <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--white); margin-bottom: var(--space-lg);">Usually $500 - Free Now</div>
-                        <a href="./audit.html" class="btn" style="background: var(--white); color: var(--ocean-blue); border: none;">Get Free Audit</a>
+                        <a href="#contact" class="btn" style="background: var(--white); color: var(--ocean-blue); border: none;">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -500,9 +573,30 @@
             <div class="footer-cta">
                 <h2>Ready to Dominate Local Search?</h2>
                 <p>Start with a free consultation or jump into our proven services. Either way, you're taking the first step toward SEO success.</p>
-                <div class="footer-cta-buttons">
-                    <a href="#contact" class="footer-btn primary">Get Started Today</a>
-                    <a href="./audit.html" class="footer-btn secondary">Free Security Audit</a>
+                <div style="position:relative;z-index:9999;padding:20px 0;text-align:center;">
+                    <button onclick="location.href='#contact'" 
+                            style="all:initial;font-family:system-ui,-apple-system,sans-serif;background:white;color:#1e3a8a;
+                                   border:2px solid white;padding:14px 28px;margin:8px;
+                                   border-radius:50px;font-size:16px;font-weight:600;
+                                   cursor:pointer;display:inline-block;box-shadow:0 4px 12px rgba(0,0,0,0.15);
+                                   min-width:180px;transition:transform 0.2s ease, box-shadow 0.2s ease;
+                                   text-align:center;line-height:1.5;"
+                            onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.2)'"
+                            onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'">
+                        Get Started Today
+                    </button>
+                    <button onclick="location.href='#contact'"
+                            style="all:initial;font-family:system-ui,-apple-system,sans-serif;background:rgba(255,255,255,0.1);
+                                   color:white;border:2px solid white;padding:14px 28px;
+                                   margin:8px;border-radius:50px;font-size:16px;
+                                   font-weight:600;cursor:pointer;display:inline-block;
+                                   box-shadow:0 4px 12px rgba(255,255,255,0.2);min-width:180px;
+                                   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+                                   transition:all 0.2s ease;text-align:center;line-height:1.5;"
+                            onmouseover="this.style.background='white';this.style.color='#1e3a8a';this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(255,255,255,0.3)'"
+                            onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.color='white';this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(255,255,255,0.2)'">
+                        Contact Us Today  
+                    </button>
                 </div>
             </div>
             
@@ -518,7 +612,6 @@
                     <ul>
                         <li><a href="./services.html">All Services</a></li>
                         <li><a href="./about.html">About Us</a></li>
-                        <li><a href="./audit.html">Free Security Audit</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
